@@ -1,0 +1,18 @@
+mcp_servers:
+  # LiteLLM API
+  litellm_mcp:
+    url: os.environ/LITELLM_MCP_URL
+    spec_path: "/openapi.json"
+    auth_type: "none"
+
+  # Slack API
+  # https://docs.litellm.ai/docs/mcp#configuration-parameters
+  slack_mcp:
+    url: "https://slack.com/api"
+    spec_path: os.environ/SLACK_SPEC_PATH
+    auth_type: "oauth2"
+    client_id: os.environ/SLACK_OAUTH_CLIENT_ID
+    client_secret: os.environ/SLACK_OAUTH_CLIENT_SECRET
+    authorization_url: "https://slack.com/oauth/v2/authorize"
+    token_url: "https://slack.com/api/oauth.v2.access"
+    scopes: ["chat:write", "channels:read"]
